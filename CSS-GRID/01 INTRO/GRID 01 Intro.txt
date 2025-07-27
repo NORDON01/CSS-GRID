@@ -1,2 +1,109 @@
- **********
- 
+ ***************
+ .cell{cell $}*2
+ ***************
+Ce qui donne:
+    <div class="cell">cell 1</div>
+    <div class="cell">cell 2</div>
+
+****
+GRID
+****    
+<style>
+    .container{
+      display:grid;
+      grid-template-columns: 200px 300px;
+    }
+</style>
+
+*************
+IMPLICIT GRID
+*************
+Number of rows = number of child elements / number of columns + 1 si number child elements % number of columns > 0;
+
+*****
+UNITS
+*****
+Possible units: px, rem, em, %, auto, fr.
+auto is most usefull for responsive rows;
+
+**
+FR
+**
+Ex:
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+
+FR is better than any other unit (rem, em, px) because it takes into account the size of the GAP. It is better than %.
+
+***
+GAP
+***
+  grid-column-gap:20px;
+  grid-row-gap:20px;
+  grid-gap:10px;      //Ligne & Colonne
+  grid-gap: 5px 10px; //Ligne, Colonne
+
+  New notation:
+  column-gap:20px;
+  row-gap:20px;
+  gap:10px;
+  gap:5px 10px;
+
+**********
+GRID LINES
+**********
+grid-column-start:1;
+grid-column-end:3;
+grid-column:1/3;
+
+grid-row-start:1;
+grid-row-end:3;
+grid-row:1/3;
+
+ .cell-1{
+            grid-column: 1/3;
+        }
+
+  De la ligne verticale de gauche (1) à la ligne verticale (-1) de droite
+        .cell-4{
+            grid-column: 1/-1;
+        }
+
+        .cell-2{
+            background: yellow;
+        }
+
+**************
+TEMPLATE AREAS
+**************
+   grid-template-areas: 
+            "a a b"
+            "a a b"
+            "c c b"
+            "d d d"
+            "e f f";
+        }
+
+        .cell-1{
+            grid-area: a;
+        }
+
+         .cell-2{
+            grid-area: b;
+        }
+
+         .cell-3{
+            grid-area: c;
+        }
+
+         .cell-4{
+            grid-area: d;
+        }
+
+         .cell-5{
+            grid-area: e;
+        }
+
+         .cell-6{
+            grid-area: f;
+        }
