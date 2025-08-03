@@ -176,3 +176,49 @@ HERO
       url("./images/image-2.jpeg") center/cover fixed no-repeat;
   }
 }
+
+/*===
+CARDS
+===*/
+
+.cards h1 {
+  text-align: center;
+}
+
+.cards {
+  padding: 4rem 0;
+}
+
+.cards-center {
+  width: 80vw;
+  max-width: 73rem;
+  margin: 2rem auto;
+}
+
+.card {
+  border: 2px solid var(--mainBlack);
+  border-radius: 7px;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+  max-width: 36rem;
+}
+
+.card-info {
+  padding: 1rem;
+}
+
+.card p {
+  line-height: 1.25;
+  font-size: 0.8rem;
+}
+
+.card-footer {
+  background-color: var(--darkGrey);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+}
+
+.card-footer span {
+  color: var(--primaryColor);
+}
