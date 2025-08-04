@@ -1,0 +1,45 @@
+************
+GOOGLE FONTS
+************
+1 https://fonts.google.com
+2 Choisir un style: fira code
+3 https://fonts.google.com/selection/embed
+
+Exemple:
+Dans le <head> du HTML:
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira"> //ou Sofia
+Dans le CSS:
+body{
+    font-family:"Fira", sans-serif; //ou    Sofia
+}
+
+OU
+
+
+.fira-code-<uniquifier> {
+  font-family: "Fira Code", monospace;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+  En remplacant <uniquifier> par "font" ou "police" et <weight> par 300 ou 400, avec
+
+  <h1 class="fira-code-police">Hello World</h1>
+
+**************************************************
+GRID INSTEAD OF MEDIA QUERIES: AUTOFILL OR AUTOFIT
+**************************************************
+
+.cards-center {
+  display: grid;
+  grid-column-gap: 2rem; /* 2 gaps x 2rem for 3 columns = 4rem  */
+  /* min = (73rem - 4rem) / 3 columns = 23rem */
+  grid-template-columns: repeat(auto-fill, minmax(23rem, 1fr));
+}
+
+Il faut prévoir 4rem pour les gap entre les images (child elements).
+Il reste donc 73 - 4 rem pour les images.
+Pour une image (child) et si l'on veut 3 colonnes, chaque image
+ doit disposer de 23rem minimum (min) de large et de 1fr (max), 
+ ce qui donne:
+                repeat(auto-fill, minmax(23rem, 1fr)
