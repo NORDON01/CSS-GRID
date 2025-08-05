@@ -1,0 +1,246 @@
+/*==============
+GLOBAL VARIABLES
+============= */
+:root {
+  --primaryColor: #f15025;
+  --mainBlack: #222;
+  --mainWhite: #fff;
+  --offWhite: #f7f7f7;
+  --darkGrey: #afafaf;
+  --mainTransition: all 0.3s linear;
+  --mainSpacing: 0.2rem;
+}
+
+html {
+  font-size: 16px; /* defau1t: 1 rem */
+}
+
+/*===========
+GLOBAL STYLES
+========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Fira", sans-serif;
+  color: var(--mainBlack);
+  background: var(--mainWhite);
+  line-height: 1.5;
+}
+
+/* .fira-code-police {
+  font-family: "Fira Code", monospace;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+ */
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+h1,
+h2,
+h3 {
+  text-transform: capitalize;
+  letter-spacing: var(--mainSpacing);
+  margin-bottom: 1.25rem;
+}
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  margin-bottom: 0;
+}
+
+p {
+  font-weight: 300;
+  font-size: 0.75rem;
+  line-height: 2;
+}
+
+.btn {
+  display: inline-block;
+  border: solid 3px var(--primaryColor);
+  border-radius: 7px;
+  margin: 3rem;
+  padding: 0.5rem 1rem;
+  color: var(--primaryColor);
+  text-transform: capitalize;
+  transition: var(--mainTransition);
+}
+
+.btn:hover {
+  color: var(--mainWhite);
+  background-color: var(--primaryColor);
+}
+
+/*===========
+MAIN NAVBAR
+========== */
+.main-navbar {
+  background: var(--darkGrey);
+  padding: 0 2rem;
+}
+
+.main-navbar ul {
+  list-style: none;
+}
+
+.main-navbar a {
+  text-transform: capitalize;
+  display: inline-block;
+  text-align: center;
+  width: 5rem;
+  padding: 1rem 0;
+  list-style: none;
+  color: var(--primaryColor);
+  letter-spacing: var(--mainSpacing);
+  transition: var(--mainTransition);
+}
+
+.main-navbar a:hover {
+  color: var(--mainBlack);
+  background-color: var(--mainWhite);
+  border-radius: 50%;
+  margin: 7px 0;
+}
+
+@media screen and (min-width: 62rem) {
+  .main-navbar ul {
+    max-width: 73rem;
+    margin: 0 auto;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(4, 1fr);
+    background-color: var(--primaryColor);
+  }
+
+  .main-navbar a {
+    color: var(--mainWhite);
+  }
+}
+
+/*==
+HERO
+==*/
+
+.hero-header {
+  min-height: 100vh;
+  color: var(--mainWhite);
+  background: var(--primaryColor);
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.hero-banner {
+  text-align: center;
+  height: 30vh;
+}
+
+.hero-banner p {
+  width: 80%;
+  max-width: 36rem;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 1rem;
+}
+
+.btn {
+  width: 30vw;
+  text-align: center;
+  margin-left: 35vw;
+}
+
+@media screen and (max-width: 36rem) {
+  .hero-banner {
+    padding: 0 3rem;
+  }
+}
+
+@media screen and (min-width: 48rem) {
+  .hero-header {
+    background: linear-gradient(rgba(241, 80, 37, 0.75), rgba(0, 0, 0, 0.75)),
+      url("./images/image-2.jpeg") center/cover fixed no-repeat;
+  }
+}
+
+/*===
+CARDS
+===*/
+
+.cards h1 {
+  text-align: center;
+}
+
+.cards {
+  padding: 4rem 0;
+}
+
+.cards-center {
+  width: 80vw;
+  max-width: 73rem;
+  margin: 2rem auto;
+}
+
+.card {
+  border: 2px solid var(--mainBlack);
+  border-radius: 7px;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+  max-width: 23rem;
+}
+
+.card-info {
+  padding: 1rem;
+}
+
+.card p {
+  line-height: 1.25;
+  font-size: 0.8rem;
+}
+
+.card-footer {
+  background-color: var(--darkGrey);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+}
+
+.card-footer span {
+  color: var(--primaryColor);
+}
+
+/*@media screen and (min-width: 48rem) {
+  .cards-center {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1rem;
+  }
+}
+
+@media screen and (min-width: 62rem) {
+  .cards-center {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  } 
+}*/
+
+.cards-center {
+  display: grid;
+  grid-column-gap: 2rem; /* 2 gaps x 2rem for 3 columns = 4rem  */
+  /* min = (73rem - 4rem) / 3 columns = 23rem */
+  grid-template-columns: repeat(auto-fill, minmax(23rem, 1fr));
+}
