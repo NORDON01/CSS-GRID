@@ -43,3 +43,16 @@ Pour une image (child) et si l'on veut 3 colonnes, chaque image
  doit disposer de 23rem minimum (min) de large et de 1fr (max), 
  ce qui donne:
                 repeat(auto-fill, minmax(23rem, 1fr)
+
+
+****************************************
+POUR CALER UNE PAGE EN HAUTEUR A L'ECRAN
+****************************************
+.main {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto 1fr auto auto;
+}
+
+La ligne (row) dimensionnée 1fr ajustera le contenu à la hauteur de l'écran.
